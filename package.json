@@ -1,0 +1,18 @@
+{
+    "name": "inkunits",
+    "version": "1.0.0",
+    "description": "Smart unit conversion engine",
+    "main": "src/conversion.js",
+    "scripts": {
+        "test": "jasmine-node spec/"
+    },
+    "keywords": [
+        "unit",
+        "conversion"
+    ],
+    "author": "Angel Sola Orbaiceta",
+    "license": "MIT",
+    "devDependencies": {
+        "jasmine-node": "^1.14.5"
+    }
+}
