@@ -25,7 +25,7 @@ describe("Unit Conversion Engine", () =>
         ).toBeCloseTo(3.048, 1e-10)
     })
 
-    xit("can convert from centimeters to miles", () =>
+    it("can convert from centimeters to miles", () =>
     {
         expect(
             convert(10).from('cm').to('mi')

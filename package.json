@@ -4,7 +4,8 @@
     "description": "Smart unit conversion engine",
     "main": "src/conversion.js",
     "scripts": {
-        "test": "jasmine-node spec/"
+        "test": "jasmine-node spec/",
+        "build": "browserify src/conversion.js --standalone units.convert > dist/inkunits.js"
     },
     "keywords": [
         "unit",
@@ -13,6 +14,8 @@
     "author": "Angel Sola Orbaiceta",
     "license": "MIT",
     "devDependencies": {
+        "browserify": "^14.5.0",
         "jasmine-node": "^1.14.5"
-    }
+    },
+    "dependencies": {}
 }

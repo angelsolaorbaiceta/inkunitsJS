@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>InkUnits : Unit Conversions</title>
+    </head>
+    <body>
+        <h1>Unit Conversions</h1>
+        <table>
+            <tr>
+                <td>Amount</td>
+                <td><input id="amount" type="number" value="45"></td>
+            </tr>
+            <tr>
+                <td>From</td>
+                <td><input id="src_units" type="text" value="N/cm2"></td>
+            </tr>
+            <tr>
+                <td>To</td>
+                <td><input id="tgt_units" type="text" value="lbf/ft2"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><hr/></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p id="result">...</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick="convert()">Convert</button></td>
+            </tr>
+        </table>
+
+        <script src="../dist/inkunits.js"></script>
+        <script>
+            const amountField = document.getElementById('amount');
+            const sourceUnitsField = document.getElementById('src_units');
+            const targetUnitsField = document.getElementById('tgt_units');
+            const resultPar = document.getElementById('result');
+
+            let convert = () => {
+                const amount = amountField.value;
+                const sourceUnits = sourceUnitsField.value;
+                const targetUnits = targetUnitsField.value;
+
+                try {
+                    const result = units.convert(amount).from(sourceUnits).to(targetUnits);
+                    resultPar.innerHTML = `${result.toFixed(5)} ${targetUnits}`;
+                    resultPar.style.color = 'black';
+                } catch(error) {
+                    resultPar.innerHTML = `ERROR: ${error}`;
+                    resultPar.style.color = 'red';
+                }
+            }
+        </script>
+    </body>
+</html>
