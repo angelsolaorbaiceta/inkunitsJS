@@ -28,24 +28,25 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2"><button onclick="convert()">Convert</button></td>
+                <td colspan="2"><button onclick="doConversion()">Convert</button></td>
             </tr>
         </table>
 
-        <script src="../dist/inkunits.js"></script>
-        <script>
+        <script type="module">
+            import convert from "../dist/index.js"
+
             const amountField = document.getElementById('amount');
             const sourceUnitsField = document.getElementById('src_units');
             const targetUnitsField = document.getElementById('tgt_units');
             const resultPar = document.getElementById('result');
 
-            let convert = () => {
+            const doConversion = () => {
                 const amount = amountField.value;
                 const sourceUnits = sourceUnitsField.value;
                 const targetUnits = targetUnitsField.value;
 
                 try {
-                    const result = units.convert(amount).from(sourceUnits).to(targetUnits);
+                    const result = convert(amount).from(sourceUnits).to(targetUnits);
                     resultPar.innerHTML = `${result.toFixed(5)} ${targetUnits}`;
                     resultPar.style.color = 'black';
                 } catch(error) {

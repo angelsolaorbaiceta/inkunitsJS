@@ -1,131 +1,131 @@
 {
-    "time": {
-        "systems": [
-            {
-                "name": "universal",
-                "factors": {
-                    "ms": 0.001,
-                    "s": 1,
-                    "min": 60,
-                    "h": 3600,
-                    "day": 86400,
-                    "week": 604800,
-                    "month": 2592000,
-                    "year": 31556952
-                }
-            }
-        ]
-    },
-    "length": {
-        "systems": [
-            {
-                "name": "international",
-                "factors": {
-                    "mm": 0.001,
-                    "cm": 0.01,
-                    "dm": 0.1,
-                    "m": 1,
-                    "dam": 10,
-                    "hm": 100,
-                    "km": 1000
-                }
-            },
-            {
-                "name": "us",
-                "factors": {
-                    "mi": 5280,
-                    "ft": 1,
-                    "in": 0.08333
-                }
-            }
-        ],
-        "system_conversion_factors": [
-            {
-                "from": "international",
-                "to": "us",
-                "factor": 3.2808
-            },
-            {
-                "from": "us",
-                "to": "international",
-                "factor": 0.3048
-            }
-        ]
-    },
-    "angle": {
-        "systems": [
-            {
-                "name": "universal",
-                "factors": {
-                    "rad": 1,
-                    "deg": 0.017453292519943
-                }
-            }
-        ]
-    },
-    "mass": {
-        "systems": [
-            {
-                "name": "international",
-                "factors": {
-                    "mg": 0.001,
-                    "cg": 0.01,
-                    "dg": 0.1,
-                    "g": 1,
-                    "dag": 10,
-                    "hg": 100,
-                    "kg": 1000
-                }
-            },
-            {
-                "name": "us",
-                "factors": {
-                    "oz": 1,
-                    "lb": 16
-                }
-            }
-        ],
-        "system_conversion_factors": [
-            {
-                "from": "international",
-                "to": "us",
-                "factor": 0.03527396
-            },
-            {
-                "from": "us",
-                "to": "international",
-                "factor": 28.349523125
-            }
-        ]
-    },
-    "force": {
-        "systems": [
-            {
-                "name": "international",
-                "factors": {
-                    "N": 1,
-                    "kN": 1000,
-                    "MN": 1000000
-                }
-            },
-            {
-                "name": "us",
-                "factors": {
-                    "lbf": 1
-                }
-            }
-        ],
-        "system_conversion_factors": [
-            {
-                "from": "international",
-                "to": "us",
-                "factor": 0.224808943871
-            },
-            {
-                "from": "us",
-                "to": "international",
-                "factor": 4.4482216
-            }
-        ]
-    }
+  "time": {
+    "systems": [
+      {
+        "name": "universal",
+        "factors": {
+          "ms": 0.001,
+          "s": 1,
+          "min": 60,
+          "h": 3600,
+          "day": 86400,
+          "week": 604800,
+          "month": 2592000,
+          "year": 31556952
+        }
+      }
+    ]
+  },
+  "length": {
+    "systems": [
+      {
+        "name": "international",
+        "factors": {
+          "mm": 0.001,
+          "cm": 0.01,
+          "dm": 0.1,
+          "m": 1,
+          "dam": 10,
+          "hm": 100,
+          "km": 1000
+        }
+      },
+      {
+        "name": "us",
+        "factors": {
+          "mi": 5280,
+          "ft": 1,
+          "in": 0.08333
+        }
+      }
+    ],
+    "system_conversion_factors": [
+      {
+        "from": "international",
+        "to": "us",
+        "factor": 3.2808
+      },
+      {
+        "from": "us",
+        "to": "international",
+        "factor": 0.3048
+      }
+    ]
+  },
+  "angle": {
+    "systems": [
+      {
+        "name": "universal",
+        "factors": {
+          "rad": 1,
+          "deg": 0.017453292519943
+        }
+      }
+    ]
+  },
+  "mass": {
+    "systems": [
+      {
+        "name": "international",
+        "factors": {
+          "mg": 0.001,
+          "cg": 0.01,
+          "dg": 0.1,
+          "g": 1,
+          "dag": 10,
+          "hg": 100,
+          "kg": 1000
+        }
+      },
+      {
+        "name": "us",
+        "factors": {
+          "oz": 1,
+          "lb": 16
+        }
+      }
+    ],
+    "system_conversion_factors": [
+      {
+        "from": "international",
+        "to": "us",
+        "factor": 0.03527396
+      },
+      {
+        "from": "us",
+        "to": "international",
+        "factor": 28.349523125
+      }
+    ]
+  },
+  "force": {
+    "systems": [
+      {
+        "name": "international",
+        "factors": {
+          "N": 1,
+          "kN": 1000,
+          "MN": 1000000
+        }
+      },
+      {
+        "name": "us",
+        "factors": {
+          "lbf": 1
+        }
+      }
+    ],
+    "system_conversion_factors": [
+      {
+        "from": "international",
+        "to": "us",
+        "factor": 0.224808943871
+      },
+      {
+        "from": "us",
+        "to": "international",
+        "factor": 4.4482216
+      }
+    ]
+  }
 }
