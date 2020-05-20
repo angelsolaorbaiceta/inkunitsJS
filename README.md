@@ -1,37 +1,32 @@
 # InkUnits
-Smart unit conversion engine.
+Smart unit conversion engine written in TypeScript.
+
+**InkUnits** can understand compound units and figure out the right conversion factor. 
 
 # Usage Node
-Load module:
-```javascript
-const convert = require('inkunits')
+Import the conversion function:
+
+```ts
+import convert from 'inkunits'
 ```
+
 Then use the fluent API:
-```javascript
+
+```ts
 convert(45).from('N/cm2').to('lbf/ft2')
 ```
-Catching errors:
-```javascript
+
+
+To account for possible conversion errors between incompatible units:
+
+```ts
 try {
     convert(45).from('N').to('ft')
-} catch(error) {
-    console.log(error)
+} catch(error: Error) {
+    console.log(error.message)
 }
 ```
 The code above would print to the console the following error message:
 > Cannot convert from N to ft
 
-# Usage Browser
-Include the _dist/inkunits.js_ file:
-```javascript
-<script src="dist/inkunits.js"></script>
-```
-Which loads the code under _units.convert_ namespace:
-```javascript
-try {
-    const result = units.convert(amount).from(sourceUnits).to(targetUnits);
-    console.log(`result: ${result.toFixed(5)} ${targetUnits}`);
-} catch(error) {
-    console.log(`ERROR: ${error}`);
-}
-```
+
