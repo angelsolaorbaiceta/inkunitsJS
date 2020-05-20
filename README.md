@@ -7,7 +7,7 @@ Smart unit conversion engine written in TypeScript.
 Import the conversion function:
 
 ```ts
-import convert from 'inkunits'
+import { convert } from 'inkunits'
 ```
 
 Then use the fluent API:

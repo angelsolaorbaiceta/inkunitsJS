@@ -1,4 +1,4 @@
-import convert from '../src/index'
+import { convert } from '../src/index'
 
 describe('Unit Conversion Engine', () => {
   it('can convert from mm2 to mm2', () => {

@@ -1,6 +1,6 @@
 import { convertQuantityFromTo } from './conversion'
 
-export default function (amount: number) {
+export function convert(amount: number) {
   return {
     from: (srcUnits: string) => ({
       to: (tgtUnits: string) =>

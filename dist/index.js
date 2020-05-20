@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = global || self, global.inkunits = factory());
-}(this, (function () { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  (global = global || self, factory(global.inkunits = {}));
+}(this, (function (exports) { 'use strict';
 
   var time = {
   	systems: [
@@ -289,7 +289,7 @@
       throw new Error(`Unit named ${unitName} was not found in configuration`);
   }
 
-  function index (amount) {
+  function convert(amount) {
       return {
           from: (srcUnits) => ({
               to: (tgtUnits) => convertQuantityFromTo(amount, srcUnits, tgtUnits)
@@ -297,6 +297,8 @@
       };
   }
 
-  return index;
+  exports.convert = convert;
+
+  Object.defineProperty(exports, '__esModule', { value: true });
 
 })));

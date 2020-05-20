@@ -1,4 +1,4 @@
-import convert from '../src'
+import { convert } from '../src'
 
 describe('Unit Conversion Engine', () => {
   /* Units in the same system */
