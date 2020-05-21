@@ -1,5 +1,8 @@
 import { ExpanderConfig, UnitExpansion } from './types'
 
+const DEFAULT_MULTIPLIER_SEPARATOR = '*'
+const DEFAULT_DIVIDER_SEPARATOR = '/'
+
 export function expand(
   units: string,
   config: ExpanderConfig = {}
@@ -18,8 +21,9 @@ function splitUnitComponents(
   units: string,
   config: ExpanderConfig
 ): UnitExpansion {
-  const multiplierSeparator = config.multiplierSeparator || '·'
-  const dividerSeparator = config.dividerSeparator || '/'
+  const { multiplierSeparator: multSep, dividerSeparator: divSep } = config
+  const multiplierSeparator = multSep || DEFAULT_MULTIPLIER_SEPARATOR
+  const dividerSeparator = divSep || DEFAULT_DIVIDER_SEPARATOR
 
   const [numerator, denominator = ''] = units.split(dividerSeparator)
 

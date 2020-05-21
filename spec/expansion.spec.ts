@@ -16,14 +16,14 @@ describe('A Unit Expansion', () => {
   })
 
   it('expands compound unit', () => {
-    let expansion = expand('kg·m2')
+    let expansion = expand('kg*m2')
 
     expect(expansion.numerator).toEqual(['kg', 'm', 'm'])
     expect(expansion.denominator).toEqual([])
   })
 
   it('expands compound denominator', () => {
-    let expansion = expand('kg/s·m2')
+    let expansion = expand('kg/s*m2')
 
     expect(expansion.numerator).toEqual(['kg'])
     expect(expansion.denominator).toEqual(['s', 'm', 'm'])

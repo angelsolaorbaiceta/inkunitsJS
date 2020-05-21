@@ -3,7 +3,21 @@ Smart unit conversion engine written in TypeScript.
 
 **InkUnits** can understand compound units and figure out the right conversion factor. 
 
-# Usage Node
+# Installation
+
+Using yarn:
+
+```
+yarn add inkunits
+```
+
+with npm:
+
+```
+npm i inkunits --save
+```
+
+# Usage
 Import the conversion function:
 
 ```ts
@@ -15,6 +29,14 @@ Then use the fluent API:
 ```ts
 convert(45).from('N/cm2').to('lbf/ft2')
 ```
+> 9398.67401
+
+Another example:
+
+```ts
+convert(1000).from('N*m/s').to('lbf*ft/min')
+```
+> 13488.53663
 
 
 To account for possible conversion errors between incompatible units:
@@ -28,6 +50,79 @@ try {
 ```
 The code above would print to the console the following error message:
 > Cannot convert from N to ft
+
+# Supported units
+
+InkUnits now supports the following units and **every possible combination between them**:
+
+## Time
+
+**Universal System**
+
+- _ms_: milliseconds
+- _s_: seconds
+- _min_: minutes
+- _h_: hours
+- _day_: days
+- _week_: weeks
+- _month_: months
+- _year_: years
+
+## Angle
+
+**Universal System**
+
+- _rad_: radians
+- _deg_: degrees
+
+## Length
+
+**International System**
+
+- _mm_: millimiters
+- _cm_: centimeters
+- _dm_: decimeters
+- _m_: meters
+- _dam_: decameters
+- _hm_: hectometers
+- _km_: kilometers
+
+**US Customary System**
+
+- _mi_: miles
+- _ft_: feet
+- _in_: inches
+
+## Mass
+
+**International System**
+
+- _mg_: milligrams
+- _cg_: centigrams
+- _dg_: decigrams
+- _g_: grams
+- _dag_: decagrams
+- _hg_: hectograms
+- _kg_: kilograms
+
+**US Customary System**
+
+- _oz_: ounzes
+- _lb_: pounds
+
+## Force
+
+**International System**
+
+- _N_: Newtons
+- _kN_: kilonewtons
+- _MN_: meganewtons
+- _GN_: giganewtowns
+
+**US Customary System**
+
+- _lbf_: pound of force
+
 
 # Unit Conversion Factors
 
