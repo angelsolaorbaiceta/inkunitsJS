@@ -14,7 +14,8 @@
   ],
   "scripts": {
     "test": "jest",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "unit",
