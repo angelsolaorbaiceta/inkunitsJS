@@ -36,7 +36,7 @@ Another example:
 ```ts
 convert(1000).from('N*m/s').to('lbf*ft/min')
 ```
-> 13488.53663
+> 44253.19098
 
 
 To account for possible conversion errors between incompatible units:
