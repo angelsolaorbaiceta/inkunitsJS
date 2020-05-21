@@ -1,8 +1,8 @@
-import * as factors from './factors.json'
+import { containSameElements } from './arrays'
 import { expand } from './expansion'
-import { containSameElements, zip } from './arrays'
-import { UnitInfo, UnitExpansion, UnitExpansionInfo } from './types'
 import { compoundConversionFactor } from './factor'
+import * as factors from './factors.json'
+import { UnitExpansion, UnitExpansionInfo, UnitInfo } from './types'
 
 const conversionFactorCache = {}
 
