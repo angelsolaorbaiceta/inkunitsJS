@@ -1,3 +1,4 @@
+import { flatMap, flatten } from './arrays'
 import { ExpanderConfig, UnitExpansion } from './types'
 
 const DEFAULT_MULTIPLIER_SEPARATOR = '*'
@@ -60,12 +61,4 @@ function unitExponent(unit: string): number {
 
 function unitName(unit: string): string {
   return unit.match(unitNameRegex)[0]
-}
-
-function flatMap<T>(array: T[], callBack: (element: T) => T[]): T[] {
-  return [].concat(...array.map(callBack))
-}
-
-function flatten<T>(acc: T[], curr: T): T[] {
-  return acc.concat(curr)
 }

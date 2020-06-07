@@ -15,7 +15,7 @@
     }
     function zip(a, b) {
         if (a.length != b.length) {
-            throw new Error(`Expect arrays to have same length`);
+            throw new Error('Arrays should have equal lengths');
         }
         const result = [];
         for (var i = 0; i < a.length; i++) {
