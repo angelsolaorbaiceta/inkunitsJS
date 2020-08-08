@@ -27,10 +27,10 @@
     "@rollup/plugin-json": "^4.0.3",
     "@rollup/plugin-typescript": "^5.0.0",
     "@types/jest": "^26.0.0",
-    "jest": "^26.0.1",
-    "rollup": "^2.10.5",
+    "jest": "^26.2.2",
+    "rollup": "^2.23.1",
     "ts-jest": "^26.0.0",
-    "tslib": "^2.0.0",
+    "tslib": "^2.0.1",
     "typescript": "^3.9.3"
   },
   "dependencies": {}

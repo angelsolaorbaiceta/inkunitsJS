@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (global = global || self, factory(global.inkunits = {}));
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.inkunits = {}));
 }(this, (function (exports) { 'use strict';
 
     function containSameElements(a, b) {
@@ -22,6 +22,12 @@
             result.push([a[i], b[i]]);
         }
         return result;
+    }
+    function flatMap(array, callBack) {
+        return [].concat(...array.map(callBack));
+    }
+    function flatten(acc, curr) {
+        return acc.concat(curr);
     }
 
     const DEFAULT_MULTIPLIER_SEPARATOR = '*';
@@ -66,12 +72,6 @@
     }
     function unitName(unit) {
         return unit.match(unitNameRegex)[0];
-    }
-    function flatMap(array, callBack) {
-        return [].concat(...array.map(callBack));
-    }
-    function flatten(acc, curr) {
-        return acc.concat(curr);
     }
 
     var time = {
