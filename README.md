@@ -1,5 +1,6 @@
 # InkUnits
 Smart unit conversion engine written in TypeScript.
+_InkUnits_ has no external dependencies and is very small in size.
 
 **InkUnits** can understand compound units and figure out the right conversion factor. 
 
