@@ -4,7 +4,7 @@ import { compoundConversionFactor } from './factor'
 import * as factors from './factors.json'
 import { UnitExpansion, UnitExpansionInfo, UnitInfo } from './types'
 
-const conversionFactorCache = {}
+const conversionFactorCache = new Map<string, number>()
 
 export function convertQuantityFromTo(
   amount: number,
@@ -12,8 +12,8 @@ export function convertQuantityFromTo(
   tgtUnits: string
 ): number {
   const cacheKey = makeCacheKey(srcUnits, tgtUnits)
-  if (conversionFactorCache.hasOwnProperty(cacheKey)) {
-    return amount * conversionFactorCache[cacheKey]
+  if (conversionFactorCache.has(cacheKey)) {
+    return amount * conversionFactorCache.get(cacheKey)
   }
 
   const srcUnitsExpansionInfo = makeUnitExpansionInfo(expand(srcUnits))
@@ -22,10 +22,11 @@ export function convertQuantityFromTo(
     throw new Error(`Cannot convert from ${srcUnits} to ${tgtUnits}`)
   }
 
-  conversionFactorCache[cacheKey] = compoundConversionFactor(
-    srcUnitsExpansionInfo,
-    tgtUnitsExpansionInfo
+  conversionFactorCache.set(
+    cacheKey,
+    compoundConversionFactor(srcUnitsExpansionInfo, tgtUnitsExpansionInfo)
   )
+
   return convertQuantityFromTo(amount, srcUnits, tgtUnits)
 }
 
